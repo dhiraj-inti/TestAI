@@ -1,3 +1,8 @@
 /venv
 /Artifacts
 .env
+
+TestcaseExecutor/__pycache__
+VertexAI/__pycache__
+TestcaseGenerator/__pycache__
+TestcaseReportGenerator/__pycache__

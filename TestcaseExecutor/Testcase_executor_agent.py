@@ -28,7 +28,7 @@ class TestcaseExecutorAgent(BaseChatAgent):
         for test_case in test_cases:
             url = test_case['endpoint']
             method = test_case['method']
-            body = test_case['body']  # Parse the JSON body
+            body = json.loads(str(test_case['body']))  # Parse the JSON body
             expected_output = test_case['expectedOutput']
 
             if method == 'POST':
@@ -39,7 +39,7 @@ class TestcaseExecutorAgent(BaseChatAgent):
             response_json = response.json()
             test_case["receivedOutput"] = json.dumps(response_json)
 
-            if response_json == expected_output:
+            if test_case["receivedOutput"] == expected_output:
                 test_case["status"] = "PASS"
             else:
                 test_case["status"] = "FAIL"

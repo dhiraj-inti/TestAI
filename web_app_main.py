@@ -7,6 +7,10 @@ import asyncio
 
 app = Flask(__name__)
 
+def check_data(a,b):
+    if not isinstance(a,int) or not isinstance(b, int):
+        return True
+
 @app.route('/add', methods=['POST'])
 def add():
     data = request.get_json()
@@ -15,6 +19,9 @@ def add():
 
     if a is None or b is None:
         return jsonify({'error': 'Missing parameters'}), 400
+    
+    if check_data(a,b):
+        return jsonify({'error': 'Invalid parameters'}), 400
 
     result = a + b
     return jsonify({'result': result})
@@ -27,6 +34,9 @@ def subtract():
 
     if a is None or b is None:
         return jsonify({'error': 'Missing parameters'}), 400
+    
+    if check_data(a,b):
+        return jsonify({'error': 'Invalid parameters'}), 400
 
     result = a - b
     return jsonify({'result': result})
@@ -40,6 +50,9 @@ def multiply():
 
     if a is None or b is None:
         return jsonify({'error': 'Missing parameters'}), 400
+    
+    if check_data(a,b):
+        return jsonify({'error': 'Invalid parameters'}), 400
 
     result = a * b
     return jsonify({'result': result})
@@ -55,6 +68,9 @@ def divide():
 
     if b == 0:
         return jsonify({'error': 'Division by 0 is not allowed'}), 400
+    
+    if check_data(a,b):
+        return jsonify({'error': 'Invalid parameters'}), 400
 
     result = a / b
     return jsonify({'result': result})

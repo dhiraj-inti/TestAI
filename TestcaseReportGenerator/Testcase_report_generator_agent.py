@@ -62,7 +62,7 @@ class TestcaseReportGeneratorAgent(BaseChatAgent):
             pdf.multi_cell(column_widths[1], 10, txt=row['endpoint'], border=1, align='L', ln=3, max_line_height=pdf.font_size)  # Wrap Endpoint
             pdf.cell(column_widths[2], 10, txt=row['method'], border=1, align='L')
             pdf.multi_cell(column_widths[3], 10, txt=json.dumps(row['body']), border=1, align='L', ln=3, max_line_height=pdf.font_size)  # Wrap Body
-            pdf.multi_cell(column_widths[4], 10, txt=json.dumps(row['expectedOutput']), border=1, align='L', ln=3, max_line_height=pdf.font_size)  # Wrap Expected Output
+            pdf.multi_cell(column_widths[4], 10, txt=row['expectedOutput'], border=1, align='L', ln=3, max_line_height=pdf.font_size)  # Wrap Expected Output
             pdf.multi_cell(column_widths[5], 10, txt=row['receivedOutput'], border=1, align='L', ln=3, max_line_height=pdf.font_size)  # Wrap Received Output
 
             # Highlight status with colors
