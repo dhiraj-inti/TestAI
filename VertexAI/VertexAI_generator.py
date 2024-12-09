@@ -4,9 +4,9 @@ import os
 
 load_dotenv()
 
-VERTEXAI_API_KEY = os.getenv("VERTEXAI_API_KEY")
+GOOGLEAI_STUDIO_API_KEY = os.getenv("GOOGLEAI_STUDIO_API_KEY")
 MODEL = "gemini-pro"
-URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={VERTEXAI_API_KEY}"
+URL = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={GOOGLEAI_STUDIO_API_KEY}"
 
 def generate(query: str) -> str:
 
