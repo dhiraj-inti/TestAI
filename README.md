@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 # Create a .env File
 # In the root directory, create a file named `.env` and add the following:
-VERTEXAI_API_KEY=YOUR_API_KEY
+GOOGLEAI_STUDIO_API_KEY=YOUR_API_KEY
 # Replace `YOUR_API_KEY` with your actual API key
 
 # Running the Application
