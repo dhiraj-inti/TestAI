@@ -37,4 +37,4 @@ python menu_driven_main.py
 
 ## Flask Web App:
 python web_app_main.py
-# Access the Flask app at: http://127.0.0.1:5000
+# Access the Flask app at: http://127.0.0.1:5000/index
